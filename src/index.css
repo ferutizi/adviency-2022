@@ -1,0 +1,25 @@
+.container {
+    background-color: rgb(234, 255, 238);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1em;
+    padding: 1em;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.5);
+}
+
+.title__list {
+    text-align: center;
+}
+
+.item__list {
+    text-align: left;
+    font-size: 20px;
+}
+
+html {
+    background-color: rgb(219, 12, 47);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,11 +1,14 @@
+import './index.css';
+
 function App() {
   return (
     <>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
+      <div className="container">
+        <h1 className='title__list'>Lista de regalos</h1>
         <ul>
-          <li>Silla</li>
-          <li>Libro</li>
-          <li>teclado</li>
+          <li className="item__list">Medias</li>
+          <li className="item__list">Cuerdas de guitarra</li>
+          <li className="item__list">Teclado</li>
         </ul>
       </div>
     </>
