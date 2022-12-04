@@ -1,24 +1,24 @@
 import './index.css';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import useFormulario from './hooks/useFormulario';
 
 function App() {
-  const [formulario, setFormulario] = useState({name: ''});
+  const [formulario, handleChange, reset] = useFormulario({ id: uuidv4() })
   const [regalos, setRegalos] = useState([]);
-
-  const handleChange = (e) => {
-    setFormulario({
-      ...formulario,
-      [e.target.name]: e.target.value
-    })
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setRegalos([
       ...regalos,
-      formulario.name
-    ])
-    setFormulario({name: ''})
+      formulario
+    ]);
+    reset();
+  }
+
+  const deleteItem = (id) => {
+    const newRegalos = regalos.filter(i => i.id !== id);
+    setRegalos(newRegalos)
   }
 
   return (
@@ -29,7 +29,7 @@ function App() {
           <input 
             name='name'
             type='text'
-            value={formulario.name}
+            value={formulario.value}
             onChange={handleChange}
             autoFocus
             placeholder='regalo...'
@@ -39,8 +39,9 @@ function App() {
         </form>
         <div className='lista__container'>
         {regalos.map(item => (
-          <div className='lista__item--container'>
-            <p className='lista__item'>{item}</p>
+          <div key={item.id} className='lista__item--container'>
+            <p className='lista__item'>{item.name}</p>
+            <button onClick={() => deleteItem(item.id)}>Quitar</button>
           </div>
         ))}
         </div>
