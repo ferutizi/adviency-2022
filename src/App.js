@@ -13,6 +13,7 @@ function App() {
       ...regalos,
       formulario
     ]);
+    e.target.reset();
     reset();
   }
 
