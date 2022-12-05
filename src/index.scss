@@ -43,12 +43,14 @@ html {
         border-radius: 5px;
         background-color: #fafafa;
         margin-bottom: 3em;
+        cursor: pointer;
     }
     &list--container {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 10px;
+        min-height: 14em;
     }
     &item {
         margin: 0;
@@ -66,10 +68,16 @@ html {
         }
         &--button {
             background-color: inherit;
-            border: 1px solid rgb(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: rgb(0, 0, 0, 0.6);
             border-radius: 5px;
             font-size: 16px;
             height: 75%;
+            &:hover {
+                border: 1px solid rgba(0, 0, 0, 0.6);
+                color: rgb(0, 0, 0, 0.8);
+                cursor:pointer
+            }
         }
     }
 }

@@ -23,6 +23,10 @@ function App() {
     setRegalos(newRegalos);
   }
 
+  const deleteAll = () => {
+    setRegalos([]);
+  }
+
   return (
     <>
       <div className='regalos__container'>
@@ -47,7 +51,7 @@ function App() {
             </div>)
           }
         </div>
-        <button className='regalos__button' type='submit'>Borrar todos</button>
+        <button className='regalos__button position' type='submit' onClick={() => deleteAll()}>Borrar todos</button>
       </div>
     </>
   );
