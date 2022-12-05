@@ -1,3 +1,4 @@
+import './index.scss';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react";
 import useFormulario from "./hooks/useFormulario";
@@ -24,24 +25,29 @@ function App() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input 
-          name='name'
-          value={formulario.value}
-          onChange={handleChange}
-          type='text'
-          placeholder='Regalo...'
-          autoFocus
-        />
-        <button type='submit'>Agregar</button>
-      </form>
-      <div>
-      {regalos.map(item => 
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <button type='button' onClick={() => deleteRegalo(item.id)}>Quitar</button>
-        </div>)
-      }
+      <div className='regalos__container'>
+        <h1 className='regalos__title'>Lista de regalos</h1>
+        <form onSubmit={handleSubmit}>
+          <input 
+            name='name'
+            value={formulario.value}
+            onChange={handleChange}
+            type='text'
+            placeholder='Regalo...'
+            autoFocus
+            className='regalos__input'
+          />
+          <button className='regalos__button' type='submit'>Agregar</button>
+        </form>
+        <div className='regalos__list--container'>
+          {regalos.map(item => 
+            <div className='regalos__item--container' key={item.id}>
+              <p className='regalos__item'>{item.name}</p>
+              <button className='regalos__item--button' type='button' onClick={() => deleteRegalo(item.id)}>Quitar</button>
+            </div>)
+          }
+        </div>
+        <button className='regalos__button' type='submit'>Borrar todos</button>
       </div>
     </>
   );
