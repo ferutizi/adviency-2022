@@ -44,7 +44,7 @@ function App() {
               <button type="submit" className="regalos__button">Agregar</button>
           </form>
           <div className="regalos__list--container">
-            {
+            { regalos != "" ?
               regalos.map(item => 
               <div key={item.id} className="regalos__item--container">
                 <p className="regalos__item">{item.name}</p>
@@ -55,6 +55,8 @@ function App() {
                   >Quitar
                 </button>
               </div>)
+              : <p className='regalos__item--vacio'>¿No quieres nada para navidad?
+              <br></br> Vamos... añade algo que te gustaria tener</p>
             }
           </div>
         </div>
