@@ -1,3 +1,4 @@
+import './index.scss';
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import useFormulario from "./hooks/useFormulario";
@@ -27,32 +28,42 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Lista de regalos</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            name="name"
-            type="text"
-            onChange={handleChange}
-            value={formulario.value}
-            autoFocus
-            placeholder="Regalos..."
-            />
-            <button type="submit">Agregar</button>
-        </form>
+      <div className="regalos__container">
         <div>
-          {regalos.map(item => 
-            <div key={item.id}>
-              <p>{item.name}</p>
-              <button 
-                type="button"
-                onClick={() => deleteItem(item.id)}
-                >Quitar
-              </button>
-            </div>
-            )}
-            <button type="button" onClick={() => deleteAll()}>Quitar todos</button>
+          <h1 className="regalos__title">Lista de regalos</h1>
+          <form onSubmit={handleSubmit} className="regalos__form">
+            <input
+              name="name"
+              type="text"
+              onChange={handleChange}
+              value={formulario.value}
+              autoFocus
+              placeholder="Regalos..."
+              className="regalos__input"
+              />
+              <button type="submit" className="regalos__button">Agregar</button>
+          </form>
+          <div className="regalos__list--container">
+            {
+              regalos.map(item => 
+              <div key={item.id} className="regalos__item--container">
+                <p className="regalos__item">{item.name}</p>
+                <button 
+                  type="button"
+                  onClick={() => deleteItem(item.id)}
+                  className="regalos__item--button"
+                  >Quitar
+                </button>
+              </div>)
+            }
+          </div>
         </div>
+        <button
+          type="button"
+          onClick={() => deleteAll()}
+          className="regalos__button"
+          >Quitar todos
+        </button>
       </div>
     </>
   );
