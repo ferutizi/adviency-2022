@@ -7,7 +7,7 @@ const Formulario = ({ gifts, setGifts }) => {
         const errors = {}
         const newGift = gifts.find(item => item.name === values.name);
         if(!values.name) {
-            errors.name = 'No escribiste ningún regalo, ¿acaso quieres un envoltorio vacío?'
+            errors.name = 'No escribiste ningún regalo, ¿acaso quieres un envoltorio vacío?';
         }
     
         if(newGift) {
@@ -36,10 +36,6 @@ const Formulario = ({ gifts, setGifts }) => {
             <input type='text' {...formik.getFieldProps('name')} className='gift__input' />
             {formik.touched.name && formik.errors.name ?
                 <div>{formik.errors.name}</div>
-                : null
-            }
-            {formik.touched.name2 && formik.errors.name ?
-                <div >{formik.errors.name}</div>
                 : null
             }
             <button type="submit" className='gift__button'>Agregar</button>
