@@ -27,4 +27,17 @@
         cursor: pointer;
         font-size: 16px;
     }
+    &void {
+        color: #fafafa;
+        font-size: 20px;
+        text-shadow: 2px 2px 4px black;
+        text-align: center;
+    }
+}
+
+form div {
+    color: #fafafa;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
 }

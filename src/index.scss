@@ -24,9 +24,15 @@ html {
         color: white;
         text-shadow: 2px 2px 4px black;
     }
+    &void {
+        color: #fafafa;
+        font-size: 20px;
+        text-shadow: 2px 2px 4px black;
+        text-align: center;
+    }
 }
 @media (max-width: 468px) {
-    .regalos__container {
+    .gift__container {
         width: 18rem;
     }
 }

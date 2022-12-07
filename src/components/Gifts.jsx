@@ -2,8 +2,8 @@ import './Gifts.scss';
 
 const Gifts = ({ gifts, setGifts}) => {
 
-    const deleteGift = (id) => {
-        const newGifts = gifts.filter(item => item.id !== id);
+    const deleteGift = (name) => {
+        const newGifts = gifts.filter(item => item.name !== name);
         setGifts(newGifts);
     }
 
@@ -11,11 +11,11 @@ const Gifts = ({ gifts, setGifts}) => {
         <div className='gift__list--container'>
             {gifts != '' ?
                 gifts.map(item => 
-                <div key={item.id} className='gift__item--container'>
+                <div key={item.name} className='gift__item--container'>
                     <p className='gift__item'>{item.name}</p>
                     <button
                     type="button"
-                    onClick={() => deleteGift(item.id)}
+                    onClick={() => deleteGift(item.name)}
                     className='gift__item--button'
                     >x
                     </button>
