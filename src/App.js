@@ -10,7 +10,7 @@ function App() {
     <>
       <div className='gift__container'>
         <div>
-          <h1>Lista de regalos</h1>
+          <h1 className='gift__title'>Lista de regalos</h1>
           <Form gifts={gifts} setGifts={setGifts} />
           <Gifts gifts={gifts} setGifts={setGifts}/>
         </div>

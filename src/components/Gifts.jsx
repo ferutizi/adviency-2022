@@ -1,3 +1,5 @@
+import './Gifts.scss';
+
 const Gifts = ({ gifts, setGifts}) => {
 
     const deleteGift = (id) => {
@@ -6,7 +8,7 @@ const Gifts = ({ gifts, setGifts}) => {
     }
 
     return(
-        <>
+        <div className='gift__list--container'>
             {gifts != '' ?
                 gifts.map(item => 
                 <div key={item.id} className='gift__item--container'>
@@ -15,13 +17,13 @@ const Gifts = ({ gifts, setGifts}) => {
                     type="button"
                     onClick={() => deleteGift(item.id)}
                     className='gift__item--button'
-                    >X
+                    >x
                     </button>
                 </div>  
                 )
                 : <p className="gift__void">¿No quieres nada para navidad? <br></br> Vamos... debe haber algo que quieras</p>
             }
-        </>
+        </div>
     )
 }
 
