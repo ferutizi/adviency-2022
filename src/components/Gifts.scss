@@ -1,0 +1,42 @@
+.gift__ {
+    &error {
+        color: #fafafa;
+        font-size: 20px;
+        text-shadow: 2px 2px 4px black;
+        text-align: center;
+    }
+    &list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        gap: 1em;
+        margin: 20px 0;
+    }
+}
+
+.items__ {
+    &container {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fafafa;
+        border-radius: 0.5em;
+        padding: 5px 10px;
+    }
+    &details {
+        margin: 0;
+        font-size: 18px;
+    }
+    &button {
+        background-color: #fafafa;
+        border: 2px dotted rgb(0, 0, 0, 0.7);
+        border-radius: 50%;
+        font-weight: 600;
+        transition: 0.5s;
+        &:hover {
+            cursor: pointer;
+            border: 2px dotted rgb(255, 0, 64, 1);
+            color: rgb(255, 0, 64, 1);
+        }
+    }
+}

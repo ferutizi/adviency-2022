@@ -1,3 +1,4 @@
+import './Formulario.scss';
 import { useFormik } from "formik";
 
 const Formulario = ({ gifts, setGifts }) => {
@@ -10,7 +11,7 @@ const Formulario = ({ gifts, setGifts }) => {
         }
 
         if(newGift) {
-            errors.name = 'Este regalo ya está en la lista, puedes darle al botón "+" para agregar mas unidades'
+            errors.name = 'Este regalo ya está en la lista, puedes clickear en + para agregar mas unidades'
         }
 
         return errors;
@@ -36,7 +37,7 @@ const Formulario = ({ gifts, setGifts }) => {
             <form onSubmit={formik.handleSubmit} className='gift__form'>
                 <input type='text' {...formik.getFieldProps('name')} className='gift__input' />
                 {formik.errors.name && formik.touched.name ?
-                    <div>{formik.errors.name}</div>
+                    <div className="gift__error">{formik.errors.name}</div>
                     : null
                 }
                 <button type="submit" className='gift__button'>Agregar</button>
