@@ -1,3 +1,4 @@
+import './Formulario.scss';
 import { useFormik } from "formik";
 
 const Formulario = ({ gifts, setGifts }) => {
@@ -26,10 +27,10 @@ const Formulario = ({ gifts, setGifts }) => {
     });
 
     return(
-        <form onSubmit={formik.handleSubmit}>
-            <input type='text' {...formik.getFieldProps('name')} />
-            {formik.errors.name && <div>{formik.errors.name}</div>}
-            <button type="submit">Agregar</button>
+        <form onSubmit={formik.handleSubmit} className='gift__form'>
+            <input type='text' {...formik.getFieldProps('name')} className='gift__input' />
+            {formik.errors.name && <div className="gift__error">{formik.errors.name}</div>}
+            <button type="submit" className="gift__button">Agregar</button>
         </form>
     );
 }
