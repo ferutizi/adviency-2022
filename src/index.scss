@@ -1,3 +1,5 @@
+@import './sass/mixins';
+@import './sass/variables';
 html {
     display: flex;
     min-height: 100vh;
@@ -10,7 +12,7 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: rgb(255, 0, 64);
+        background-color: $primary;
         min-height: 30rem;
         width: 25rem;
         border-radius: 2em;

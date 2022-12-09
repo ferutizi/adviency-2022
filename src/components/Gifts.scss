@@ -1,6 +1,9 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
 .gift__ {
     &error {
-        color: #fafafa;
+        color: $secondary;
         font-size: 20px;
         text-shadow: 2px 2px 4px black;
         text-align: center;
@@ -19,7 +22,7 @@
     &container {
         display: flex;
         justify-content: space-between;
-        background-color: #fafafa;
+        background-color: $secondary;
         border-radius: 0.5em;
         padding: 5px 10px;
     }
@@ -28,7 +31,7 @@
         font-size: 18px;
     }
     &button {
-        background-color: #fafafa;
+        background-color: $secondary;
         border: 1px solid rgb(0, 0, 0, 0.7);
         border-radius: 0.5em;
         padding: 0.2em 0.4em;
@@ -38,14 +41,14 @@
         transition: 0.5s;
         &:hover {
             cursor: pointer;
-            border: 1px solid rgb(255, 0, 64, 1);;
-            color: rgb(255, 0, 64, 1);
+            border: 1px solid $primary;;
+            color: $primary;
         }
     }
     &button--red {
-        background-color: #fafafa;
-        border: 1px solid rgb(255, 0, 64, 1);
-        color: rgb(255, 0, 64, 1);
+        background-color: $secondary;
+        border: 1px solid $primary;
+        color: $primary;
         border-radius: 0.5em;
         padding: 0.2em 0.4em;
         font-size: 14px;
