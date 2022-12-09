@@ -5,9 +5,15 @@ const Formulario = ({ gifts, setGifts }) => {
 
     const validate = (values) => {
         const error = {}
+        const newGift = gifts.find(item => item.name === values.name);
         if(!values.name) {
             error.name = 'No escribiste ningún regalo ¿Acaso quieres un envoltorio vacío?'
         }
+
+        if(newGift) {
+            error.name = 'Este regalo ya está en la lista. Puedes agregar otra unidad con el boton +'
+        }
+
         return error;
     }
 
