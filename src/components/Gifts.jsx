@@ -27,7 +27,7 @@ const Gifts = ({ gifts, setGifts }) => {
             {gifts != '' ?
                 gifts.map(item => 
                     <div key={item.name} className='items__container'>
-                        <p className='items__details'>{item.name} {item.count > 0 && `${item.count}`}</p>
+                        <p className='items__details'>{item.name} {item.count > 0 && `x${item.count}`}</p>
                         <div className='items__button--flex'>
                             <div>
                                 <button type="button" onClick={() => aumentar(item)} className='items__button'>+</button>

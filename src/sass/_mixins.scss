@@ -1,0 +1,18 @@
+@mixin inputStyle {
+    border: 2px dotted $primary;
+    background-color: $secondary;
+    border-radius: 1em;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+@mixin itemButton {
+    background-color: $secondary;
+    border-radius: 0.5em;
+    padding: 0.2em 0.4em;
+    font-size: 14px;
+    min-width: 22px;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+}

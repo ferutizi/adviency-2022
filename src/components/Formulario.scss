@@ -10,24 +10,17 @@
         margin-top: 20px;
     }
     &input {
+        @include inputStyle;
         width: 100%;
         height: 3em;
         outline: none;
         box-sizing: border-box;
-        border: 2px dotted $primary;
-        background-color: $secondary;
-        border-radius: 1em;
         padding: 0 10px;
-        font-size: 16px;
     }
     &button {
+        @include inputStyle;
         width: 80%;
         height: 2em;
-        border: 2px dotted $primary;
-        background-color: $secondary;
-        border-radius: 1em;
-        margin: 0 auto;
         cursor: pointer;
-        font-size: 16px;
     }
 }
