@@ -1,4 +1,5 @@
-import { useFormik } from "formik"
+import './Formulario.scss';
+import { Formik, useFormik } from "formik"
 
 const Formulario = ({ gifts, setGifts }) => {
 
@@ -33,9 +34,10 @@ const Formulario = ({ gifts, setGifts }) => {
     });
 
     return(
-        <form onSubmit={formik.handleSubmit}>
-            <input type='text' autoFocus {...formik.getFieldProps('name')} />
-            <button type="submit">Agregar</button>
+        <form onSubmit={formik.handleSubmit} className='gift__form'>
+            <input type='text' autoFocus {...formik.getFieldProps('name')} className='gift__input' />
+            {formik.errors && formik.touched ? <div className='gift__error'>{formik.errors.name}</div> : null}
+            <button type="submit" className='gift__button'>Agregar</button>
         </form>
     );
 }

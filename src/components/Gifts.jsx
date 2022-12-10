@@ -1,3 +1,5 @@
+import './Gifts.scss';
+
 const Gifts = ({ gifts, setGifts }) => {
 
     const aumentar = (gift) => {
@@ -21,20 +23,20 @@ const Gifts = ({ gifts, setGifts }) => {
 
 
     return(
-        <div>
-            {gifts !== '' ?
+        <div className="gift__list items">
+            {gifts != '' ?
                 gifts.map(item => 
-                    <div key={item.name}>
-                        <p>{item.name} {item.count > 0 ? `x${item.count}` : null}</p>
-                        <div>
+                    <div key={item.name} className='items__container'>
+                        <p className='items__details'>{item.name} {item.count > 0 ? `x${item.count}` : null}</p>
+                        <div className="items__button--flex">
                             <div>
-                                <button type="button" onClick={() => aumentar(item)}>+</button>
-                                <button type="button" onClick={() => disminuir(item)}>-</button>
+                                <button type="button" className='items__button' onClick={() => aumentar(item)}>+</button>
+                                <button type="button" className='items__button' onClick={() => disminuir(item)}>-</button>
                             </div>
-                            <button type="button" onClick={() => deleteGift(item.name)}>x</button>
+                            <button type="button" className='items__button--red' onClick={() => deleteGift(item.name)}>x</button>
                         </div>
                     </div>)
-                : <p>¿No quieres nada para navidad? Vamos... debe haber algo que quieras</p>
+                : <p className="gift__error">¿No quieres nada para navidad? Vamos... debe haber algo que quieras</p>
             }
         </div>
     );
