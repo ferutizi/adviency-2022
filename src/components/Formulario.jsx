@@ -21,7 +21,8 @@ const Formulario = ({ gifts, setGifts }) => {
     const formik = useFormik({
         initialValues: {
             name: '',
-            count: 0
+            count: 0,
+            link: ''
         },
         validate,
         onSubmit: (values,{ resetForm }) => {
@@ -29,14 +30,26 @@ const Formulario = ({ gifts, setGifts }) => {
                 ...gifts,
                 values
             ]);
-            resetForm({ name: '', count: 0 });
+            resetForm({ name: '', count: 0, link: '' });
         }
     });
 
     return(
         <form onSubmit={formik.handleSubmit} className='gift__form'>
-            <input type='text' autoFocus {...formik.getFieldProps('name')} className='gift__input' />
-            {formik.errors && formik.touched ? <div className='gift__error'>{formik.errors.name}</div> : null}
+            <input
+                type='text'
+                autoFocus
+                {...formik.getFieldProps('name')}
+                placeholder='Regalo...'
+                className='gift__input' 
+            />
+            <input
+            type='text'
+            {...formik.getFieldProps('link')}
+            placeholder='Link de imagen'
+            className='gift__input' 
+            />
+            {formik.errors ? <div className='gift__error'>{formik.errors.name}</div> : null}
             <button type="submit" className='gift__button'>Agregar</button>
         </form>
     );

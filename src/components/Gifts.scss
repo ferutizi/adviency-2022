@@ -3,7 +3,7 @@
 
 .gift__ {
     &error {
-        color: #fafafa;
+        color: $secondary;
         font-size: 20px;
         text-shadow: 2px 2px 4px black;
         text-align: center;
@@ -22,30 +22,38 @@
     &container {
         display: flex;
         justify-content: space-between;
-        background-color: #fafafa;
+        background-color: $secondary;
         border-radius: 0.5em;
         padding: 5px 10px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        max-height: 32px;
     }
     &details {
         margin: 0;
         font-size: 18px;
     }
+    &img {
+        height: 100%;
+        width: auto;
+    }
     &button {
         @include itemButton;
         border: 1px solid rgb(0, 0, 0, 0.7);
         &:hover {
-            border: 1px solid rgb(255, 0, 64, 1);;
-            color: rgb(255, 0, 64, 1);
+            border: 1px solid $primary;;
+            color: $primary;
         }
     }
     &button--red {
         @include itemButton;
-        border: 1px solid rgb(255, 0, 64, 1);
-        color: rgb(255, 0, 64, 1);
+        border: 1px solid $primary;
+        color: $primary;
     }
     &button--flex {
         display: flex;
+        align-items: center;
         gap: 1em;
+        max-width: 100px;
         div {
             display: flex;
             gap: 0.5em

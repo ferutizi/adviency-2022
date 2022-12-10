@@ -1,6 +1,7 @@
 import './Gifts.scss';
 
 const Gifts = ({ gifts, setGifts }) => {
+    const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png'
 
     const aumentar = (gift) => {
         if(gift.count >= 0) {
@@ -27,7 +28,10 @@ const Gifts = ({ gifts, setGifts }) => {
             {gifts != '' ?
                 gifts.map(item => 
                     <div key={item.name} className='items__container'>
-                        <p className='items__details'>{item.name} {item.count > 0 ? `x${item.count}` : null}</p>
+                        <div className='items__button--flex'>
+                            <img src={item.link ? item.link : defaultImg} alt={item.name} className='items__img' />
+                            <p className='items__details'>{item.name} {item.count > 0 ? `x${item.count}` : null}</p>
+                        </div>
                         <div className="items__button--flex">
                             <div>
                                 <button type="button" className='items__button' onClick={() => aumentar(item)}>+</button>
