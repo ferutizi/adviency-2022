@@ -1,10 +1,10 @@
 import './index.scss';
-import { useState } from "react";
+import { useLocalStorage } from './hooks/useLocalStorage';
 import Formulario from './components/Formulario';
 import Gifts from './components/Gifts';
 
 function App() {
-  const [gifts, setGifts] = useState([]);
+  const [gifts, setGifts] = useLocalStorage('gifts', []);
 
   return (
     <>
