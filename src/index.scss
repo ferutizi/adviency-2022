@@ -1,5 +1,6 @@
 @import './sass/mixins';
 @import './sass/variables';
+
 html {
     display: flex;
     min-height: 100vh;
@@ -16,7 +17,7 @@ html {
         min-height: 30rem;
         width: 25rem;
         border-radius: 2em;
-        box-shadow: 3px 3px 6px black;
+        @include boxShadow(3px, 1);
         padding: 1.25rem 2.5rem;
     }
     &title {
@@ -24,7 +25,7 @@ html {
         margin: 0;
         font-size: 2.25em;
         color: white;
-        text-shadow: 2px 2px 4px black;
+        @include textShadow(2px, 1)
     }
 }
 

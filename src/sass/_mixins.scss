@@ -20,3 +20,7 @@
 @mixin boxShadow($size, $opacity) {
     box-shadow: $size $size ($size * 2) rgba(0,0,0, $opacity);
 }
+
+@mixin textShadow($size, $opacity) {
+    text-shadow: $size $size ($size * 2) rgba(0,0,0, $opacity);
+}

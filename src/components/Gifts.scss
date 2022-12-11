@@ -5,7 +5,7 @@
     &error {
         color: $secondary;
         font-size: 1.25em;
-        text-shadow: 2px 2px 4px black;
+        @include textShadow(2px, 1);
         text-align: center;
     }
     &list {
@@ -27,7 +27,7 @@
         background-color: $secondary;
         border-radius: 0.5em;
         padding: 5px 10px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        @include boxShadow(2px, 0.6);
         max-height: 2rem;
     }
     &details {
