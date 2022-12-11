@@ -36,11 +36,11 @@ const Formulario = ({ gifts, setGifts }) => {
 
     return(
         <>
-            <form onSubmit={formik.handleSubmit}>
-                <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus />
-                {formik.errors.name && formik.touched.name ? <div>{formik.errors.name}</div> : null}
-                <input type='text' {...formik.getFieldProps('url')} placeholder='url de imagen' />
-                <button type='submit'>Agregar</button>
+            <form onSubmit={formik.handleSubmit} className='gift__form'>
+                <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus className='gift__input' />
+                {formik.errors.name && formik.touched.name ? <div className='gift__error'>{formik.errors.name}</div> : null}
+                <input type='text' {...formik.getFieldProps('url')} placeholder='url de imagen' className='gift__input' />
+                <button type='submit' className='gift__button'>Agregar</button>
             </form>
         </>
     );

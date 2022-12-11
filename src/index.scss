@@ -1,0 +1,35 @@
+@import './sass/mixins';
+@import './sass/variables';
+html {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}  
+
+.gift__ {
+    &container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $primary;
+        min-height: 30rem;
+        width: 25rem;
+        border-radius: 2em;
+        box-shadow: 3px 3px 6px black;
+        padding: 1.25rem 2.5rem;
+    }
+    &title {
+        text-align: center;
+        margin: 0;
+        font-size: 2.25em;
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+}
+
+@media (max-width: 468px) {
+    .gift__container {
+        width: 18rem;
+    }
+}

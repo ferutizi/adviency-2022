@@ -1,0 +1,22 @@
+@mixin inputStyle {
+    background-color: $secondary;
+    border: 2px dotted $primary;
+    border-radius: 1em;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+@mixin itemButton {
+    background-color: $secondary;
+    border-radius: 0.5em;
+    padding: 0.2em 0.4em;
+    font-size: 0.875em;
+    min-width: 1.375rem;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+@mixin boxShadow($size, $opacity) {
+    box-shadow: $size $size ($size * 2) rgba(0,0,0, $opacity);
+}
