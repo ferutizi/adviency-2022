@@ -1,18 +1,31 @@
 import './index.scss';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { useState } from 'react';
 import Formulario from './components/Formulario';
 import Gifts from './components/Gifts';
 
 function App() {
   const [gifts, setGifts] = useLocalStorage('gifts', []);
+  const [modal, setModal] = useState(false);
 
   return (
     <>
       <div className='gift__container'>
+        <div style={{display: 'flex',flexDirection: 'column' , justifyContent:'center', gap: '1em'}}>
+          <h1 className='gift__title'>Lista de regalos</h1>
+          <button type='button' onClick={() => setModal(true)} className='gift__button'>Agregar Regalo</button>
+          <Gifts
+            gifts={gifts}
+            setGifts={setGifts}
+          />
+        </div>
         <div>
-          <h1 className='gift__title'></h1>
-          <Formulario gifts={gifts} setGifts={setGifts} />
-          <Gifts gifts={gifts} setGifts={setGifts} />
+          <Formulario
+            gifts={gifts}
+            setGifts={setGifts}
+            modal={modal}
+            setModal={setModal}
+          />
         </div>
         <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>
       </div>

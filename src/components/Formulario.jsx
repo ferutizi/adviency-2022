@@ -1,7 +1,7 @@
 import './Formulario.scss';
 import { useFormik } from 'formik';
 
-const Formulario = ({ gifts, setGifts }) => {
+const Formulario = ({ gifts, setGifts, modal, setModal }) => {
 
     const validate = (values) => {
         let error = {};
@@ -31,16 +31,26 @@ const Formulario = ({ gifts, setGifts }) => {
                 values
             ])
             resetForm({ name: '', count: 1, url: '' })
-        }
+            setModal(!modal)
+        },
     })
 
     return(
-        <form onSubmit={formik.handleSubmit} className='gift__form'>
-            <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus className='gift__input' />
-            {formik.errors.name && formik.touched.name ? <div className='gift__error'>{formik.errors.name}</div> : null}
-            <input type='text' {...formik.getFieldProps('url')} placeholder='url de imagen' className='gift__input' />
-            <button type='submit' className='gift__button'>Agregar</button>
-        </form>
+        <>
+            {modal && 
+                <div className='gift__modal'>
+                    <div className='gift__modal--card'>
+                        <button className='gift__modal--button' type='button' onClick={() => setModal(false)}>X</button>
+                        <form onSubmit={formik.handleSubmit} className='gift__form'>
+                            <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus className='gift__input' />
+                            {formik.errors.name && formik.touched.name ? <div className='gift__error--modal'>{formik.errors.name}</div> : null}
+                            <input type='text' {...formik.getFieldProps('url')} placeholder='url de imagen' className='gift__input' />
+                            <button type='submit' className='gift__button'>Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </>
     );
 }
 

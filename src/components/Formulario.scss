@@ -23,4 +23,38 @@
         height: 2em;
         cursor: pointer;
     }
+    &modal {
+        background-color: rgba(255,255,255, 0.5);
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &modal--button {
+        width: 2em;
+        height: 2em;
+    }
+    &error--modal {
+        color: #000;
+        font-size: 1.25em;
+        @include textShadow(2px, 1);
+        text-align: center;
+    }
+    &modal--card {
+        background-color: #fff;
+        padding: 1.5em;
+        text-align: center;
+        width: 100%;
+        height: 16rem;
+        max-width: 26rem;
+        border: 3px dotted $primary;
+        border-radius: 0.5em;
+        box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+    }
 }
