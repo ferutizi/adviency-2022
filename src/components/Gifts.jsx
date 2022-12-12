@@ -29,7 +29,9 @@ const Gifts = ({ gifts, setGifts }) => {
                     <div key={item.name} className='items__container'>
                         <div className='items__button--flex'>
                             <img className='items__img' src={item.url ? item.url : defaultImg} alt={item.name} />
-                            <p className='items__details'>{item.name} {item.count > 1 ? `x${item.count}` : null}</p>
+                            <p className='items__details'>
+                                <b>{item.name}</b> {item.count > 1 ? `x${item.count}` : null} <br></br><span>para:</span> {item.addressee}
+                            </p>
                         </div>
                         <div className='items__button--flex'>
                             <div>

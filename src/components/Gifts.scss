@@ -25,14 +25,18 @@
         align-items: center;
         max-width: 25em;
         background-color: $secondary;
-        border-radius: 0.5em;
-        padding: 5px 10px;
+        border-radius: 0.5rem;
+        padding: 0.625em;
         @include boxShadow(2px, 0.6);
         max-height: 2rem;
     }
     &details {
         margin: 0;
         font-size: 1.125em;
+        span {
+            font-weight: 600;
+            color: $primary;
+        }
     }
     &img {
         height: 100%;

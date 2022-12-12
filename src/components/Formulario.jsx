@@ -19,20 +19,23 @@ const Formulario = ({ gifts, setGifts, modal, setModal }) => {
         return error;
     }
 
+    const initial = {
+        name: '',
+        count: 1,
+        addressee: '',
+        url: ''
+    }
+
     const formik = useFormik({
-        initialValues: {
-            name: '',
-            count: 1,
-            url: ''
-        },
+        initialValues: initial,
         validate,
-        onSubmit: (values, { resetForm }) => {
+        onSubmit: (values, { resetForm }, initial) => {
             setGifts([
                 ...gifts,
                 values
             ])
-            resetForm({ name: '', count: 1, url: '' })
-            setModal(!modal)
+            resetForm({ initial });
+            setModal(!modal);
         },
     })
 
@@ -41,6 +44,7 @@ const Formulario = ({ gifts, setGifts, modal, setModal }) => {
             <form onSubmit={formik.handleSubmit} className='gift__form'>
                 <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus className='gift__input' />
                 {formik.errors.name && formik.touched.name ? <div className='modal__error'>{formik.errors.name}</div> : <div className='modal__error'></div>}
+                <input type='text' {...formik.getFieldProps('addressee')} placeholder='Destinatario' className='gift__input' />
                 <input type='text' {...formik.getFieldProps('url')} placeholder='url de imagen' className='gift__input' />
                 <button type='submit' className='gift__button'>Agregar</button>
             </form>
