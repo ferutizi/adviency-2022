@@ -68,7 +68,7 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
     let {name, count, addressee, url} = formik.values;
 
     return(
-        <Modal modal={modal} setModal={setModal}>
+        <Modal modal={modal} setModal={setModal} setEditMode={setEditMode}>
             <form onSubmit={formik.handleSubmit} className='gift__form'>
                 <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus className='gift__input' />
                 {formik.errors.name && formik.touched.name ? <div className='modal__error'>{formik.errors.name}</div> : <div className='modal__error'></div>}
