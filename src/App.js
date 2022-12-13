@@ -7,6 +7,8 @@ import Gifts from './components/Gifts';
 function App() {
   const [gifts, setGifts] = useLocalStorage('gifts', []);
   const [modal, setModal] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [editGift, setEditGift] = useState({});
 
   return (
     <>
@@ -17,6 +19,9 @@ function App() {
           <Gifts
             gifts={gifts}
             setGifts={setGifts}
+            setModal={setModal}
+            editMode={editMode} setEditMode={setEditMode}
+            editGift={editGift} setEditGift={setEditGift}
           />
         </div>
         <div>
@@ -25,6 +30,8 @@ function App() {
             setGifts={setGifts}
             modal={modal}
             setModal={setModal}
+            editMode={editMode} setEditMode={setEditMode}
+            editGift={editGift} setEditGift={setEditGift}
           />
         </div>
         <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>

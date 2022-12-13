@@ -1,7 +1,21 @@
+import { useState } from 'react';
 import './Gifts.scss';
 
-const Gifts = ({ gifts, setGifts }) => {
+const Gifts = ({ gifts, setGifts, setModal, editMode, setEditMode, editGift, setEditGift }) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
+
+    const initial = {
+        name: '',
+        count: 1,
+        addressee: '',
+        url: ''
+    }
+
+    const editThisGift = (gift) => {
+        setModal(true);
+        setEditMode(true);
+        setEditGift(gift);
+    }
 
     const aumentar = (gift) => {
         if(gift.count >= 0) {
@@ -37,6 +51,7 @@ const Gifts = ({ gifts, setGifts }) => {
                             <div>
                                 <button type='button' onClick={() => aumentar(item)} className='items__button'>+</button>
                                 <button type='button' onClick={() => disminuir(item)} className='items__button'>-</button>
+                                <button type='button' onClick={() => editThisGift(item)} className='items__button'>ed</button>  
                             </div>
                             <button type='button' onClick={() => deleteGift(item.name)} className='items__button--red'>x</button>
                         </div>
