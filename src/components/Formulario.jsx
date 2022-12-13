@@ -27,7 +27,6 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
         url: ''
     }
     
-    
     useEffect(() => {
         if(editMode) {
             name = editGift.name;

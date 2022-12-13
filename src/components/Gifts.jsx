@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import './Gifts.scss';
 
-const Gifts = ({ gifts, setGifts, setModal, editMode, setEditMode, editGift, setEditGift }) => {
+const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
 
     const initial = {
