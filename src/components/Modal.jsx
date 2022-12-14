@@ -10,7 +10,7 @@ const Modal = ({ modal, setModal, children, setEditMode }) => {
             {modal && 
                 <div className='modal__container'>
                     <div className='modal__card'>
-                        <button className='modal__button' type='button' onClick={() => closeModal()}>X</button>
+                        <button tabIndex={5} className='modal__button' type='button' onClick={() => closeModal()}>X</button>
                         {children}
                     </div>
                 </div>

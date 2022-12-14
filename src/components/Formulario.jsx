@@ -70,11 +70,29 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
     return(
         <Modal modal={modal} setModal={setModal} setEditMode={setEditMode}>
             <form onSubmit={formik.handleSubmit} className='gift__form'>
-                <input type='text' {...formik.getFieldProps('name')} placeholder='Regalo' autoFocus className='gift__input' />
+                <input
+                 type='text'
+                 {...formik.getFieldProps('name')}
+                 placeholder='Regalo'
+                 autoFocus className='gift__input'
+                 tabIndex={1} 
+                 />
                 {formik.errors.name && formik.touched.name ? <div className='modal__error'>{formik.errors.name}</div> : <div className='modal__error'></div>}
-                <input type='text' {...formik.getFieldProps('addressee')} placeholder='Destinatario' className='gift__input' />
-                <input type='text' {...formik.getFieldProps('url')} placeholder='url de imagen' className='gift__input' />
-                <button type='submit' className='gift__button'>{editMode ? 'Actualizar' : 'Agregar'}</button>
+                <input
+                 type='text'
+                 {...formik.getFieldProps('addressee')}
+                 placeholder='Destinatario'
+                 className='gift__input'
+                 tabIndex={2} 
+                 />
+                <input
+                 type='text'
+                 {...formik.getFieldProps('url')}
+                 placeholder='url de imagen'
+                 className='gift__input' 
+                 tabIndex={3} 
+                 />
+                <button tabIndex={4} type='submit' className='gift__button'>{editMode ? 'Actualizar' : 'Agregar'}</button>
             </form>
         </Modal>
     );
