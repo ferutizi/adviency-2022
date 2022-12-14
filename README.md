@@ -45,7 +45,7 @@ La aplicacion localmente corre en el puerto 3000
 
 - [x] Día 13: Nuestros usuarios se ponen muy contentos y se equivocan al cargar regalos, agreguemos un botón editar que nos permita cambiar regalos ya agregados.
 
-- [ ] Día 14: Nuestra aplicación no es muy accesible, hagamos que podamos agregar, borrar y editar regalos sin tocar el mouse.
+- [x] Día 14: Nuestra aplicación no es muy accesible, hagamos que podamos agregar, borrar y editar regalos sin tocar el mouse.
 
 - [ ] Día 15: Pronto tendremos que preparar una api para nuestra aplicación, preparemos un método para traernos nuestros regalos que use promesas o async await.
 
