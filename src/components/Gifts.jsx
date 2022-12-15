@@ -3,6 +3,21 @@ import './Gifts.scss';
 const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
 
+    const giftApi = async () => {
+        try {
+            const res = await fetch('url');
+            const data = await res.json();
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+// Llamado a Api teniendo los gifts como dependencia
+/*     useEffect(() => {
+      giftApi();
+    }, [gifts]); */
+    
+
     const initial = {
         name: '',
         count: 1,
