@@ -67,16 +67,23 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
     
     let {name, count, addressee, url} = formik.values;
 
+    const suggestion = () => {
+        
+    }
+
     return(
         <Modal modal={modal} setModal={setModal} setEditMode={setEditMode}>
             <form onSubmit={formik.handleSubmit} className='gift__form'>
-                <input
-                 type='text'
-                 {...formik.getFieldProps('name')}
-                 placeholder='Regalo'
-                 autoFocus className='gift__input'
-                 tabIndex={1} 
-                 />
+                <div style={{display: 'flex', gap: '5px'}}>
+                    <input
+                    type='text'
+                    {...formik.getFieldProps('name')}
+                    placeholder='Regalo'
+                    autoFocus className='gift__input'
+                    tabIndex={1} 
+                    />
+                    <button className='modal__button' type='button' onClick={() => suggestion()}>?</button>
+                </div>
                 {formik.errors.name && formik.touched.name ? <div className='modal__error'>{formik.errors.name}</div> : <div className='modal__error'></div>}
                 <input
                  type='text'
@@ -84,14 +91,14 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
                  placeholder='Destinatario'
                  className='gift__input'
                  tabIndex={2} 
-                 />
+                />
                 <input
                  type='text'
                  {...formik.getFieldProps('url')}
                  placeholder='url de imagen'
                  className='gift__input' 
                  tabIndex={3} 
-                 />
+                />
                 <button tabIndex={4} type='submit' className='gift__button'>{editMode ? 'Actualizar' : 'Agregar'}</button>
             </form>
         </Modal>

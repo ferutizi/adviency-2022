@@ -24,3 +24,13 @@
 @mixin textShadow($size, $opacity) {
     text-shadow: $size $size ($size * 2) rgba(0,0,0, $opacity);
 }
+
+@mixin modalButton {
+    width: 2em;
+    height: 2em;
+    border: 1px solid $primary;
+    border-radius: 0.5em;
+    color: $primary;
+    background-color: inherit;
+    cursor:pointer;
+}

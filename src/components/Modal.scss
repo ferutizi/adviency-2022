@@ -15,16 +15,13 @@
         justify-content: center;
     }
     &button {
-        width: 2em;
-        height: 2em;
-        border: 1px solid $primary;
-        border-radius: 0.5em;
-        position: relative;
-        top: -1em;
-        right: -15.6em;
-        color: $primary;
-        background-color: inherit;
-        cursor:pointer;
+        @include modalButton;
+        &--close {
+            @include modalButton;
+            position: relative;
+            top: -1em;
+            right: -15.6em;
+        }
     }
     &error {
         color: #000;

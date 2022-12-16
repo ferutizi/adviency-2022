@@ -2,7 +2,7 @@ import './Gifts.scss';
 
 const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
-
+    
     const giftApi = async () => {
         try {
             const res = await fetch('url');
