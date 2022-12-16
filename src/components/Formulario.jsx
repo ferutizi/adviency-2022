@@ -30,9 +30,9 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
     
     useEffect(() => {
         if(editMode) {
-            formik.values.name = editGift.name;
-            formik.values.addressee = editGift.addressee ;
-            formik.values.url = editGift.url ;
+            formik.setFieldValue('name', editGift.name);
+            formik.setFieldValue('addresse', editGift.addressee);
+            formik.setFieldValue('url', editGift.url);
         } /* else {
             formik.values.name = initial.name;
             formik.values.count = initial.count ;
@@ -68,7 +68,8 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
 
     const suggestion = () => {
         const random = Math.round(Math.random() * (13) + 1);
-        formik.values.name = sugg[random];
+        // use setFieldValue to re-render input name
+        formik.setFieldValue('name', sugg[random]);
     }
 
     return(
