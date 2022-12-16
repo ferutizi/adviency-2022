@@ -2,6 +2,7 @@ import './Formulario.scss';
 import { useFormik } from 'formik';
 import Modal from './Modal';
 import { useEffect } from 'react';
+import sugg from '../suggestion.json';
 
 const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, editGift, setEditGift }) => {
     
@@ -29,15 +30,15 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
     
     useEffect(() => {
         if(editMode) {
-            name = editGift.name;
-            addressee = editGift.addressee ;
-            url = editGift.url ;
-        } else {
-            name = initial.name;
-            count = initial.count ;
-            addressee = initial.addressee ;
-            url = initial.url ;
-      }
+            formik.values.name = editGift.name;
+            formik.values.addressee = editGift.addressee ;
+            formik.values.url = editGift.url ;
+        } /* else {
+            formik.values.name = initial.name;
+            formik.values.count = initial.count ;
+            formik.values.addressee = initial.addressee ;
+            formik.values.url = initial.url ;
+      } */
     }, [editMode]);    
 
     const formik = useFormik({
@@ -52,9 +53,9 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
             } else {
                 const newGifts = [...gifts];
                 const g = newGifts.find(g => g.name === editGift.name);
-                g.name = name;
-                g.addressee = addressee;
-                g.url = url;
+                g.name = formik.values.name;
+                g.addressee = formik.values.addressee;
+                g.url = formik.values.url;
                 setEditMode(false);
                 setEditGift({});
                 setGifts(newGifts);
@@ -64,11 +65,10 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
             setEditMode(false)
         },
     })
-    
-    let {name, count, addressee, url} = formik.values;
 
     const suggestion = () => {
-        
+        const random = Math.round(Math.random() * (13) + 1);
+        formik.values.name = sugg[random];
     }
 
     return(
