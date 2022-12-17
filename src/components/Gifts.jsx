@@ -55,11 +55,13 @@ const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
             {gifts != '' ?
                 gifts.map(item => 
                     <div key={item.name} className='items__container'>
-                        <div className='items__button--flex'>
+                        <div className='items__flex'>
                             <img className='items__img' src={item.url ? item.url : defaultImg} alt={item.name} />
-                            <p className='items__details'>
-                                <b>{item.name}</b> {item.count > 1 ? `x${item.count}` : null} <br></br><span>para:</span> {item.addressee}
-                            </p>
+                            <div className='items__details'>
+                                <b>{item.name} {item.count > 1 ? `x${item.count}` : null} </b>
+                                <p><span>para:</span> {item.addressee} </p>
+                                <p><span>precio:</span> ${item.price * item.count} </p>
+                            </div>
                         </div>
                         <div className='items__button--flex'>
                             <div>

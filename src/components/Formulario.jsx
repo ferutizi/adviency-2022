@@ -14,7 +14,7 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
             error.name = 'No escribiste ningún regalo ¿Acaso quieres un envoltorio vacío?';
         }
 
-        if(newGift) {
+        if(newGift && !editMode) {
             error.name = 'Este regalo ya está en la lista. Puedes agregar otra unidad con el botón +';
         }
         

@@ -28,11 +28,25 @@
         border-radius: 0.5rem;
         padding: 0.625em;
         @include boxShadow(2px, 0.6);
-        max-height: 2rem;
+        max-height: 3rem;
+    }
+    &flex {
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
     }
     &details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        height: 52px;
         margin: 0;
         font-size: 1.125em;
+        p {
+            margin: 0;
+            font-size: 0.85em;
+        }
         span {
             font-weight: 600;
             color: $primary;
@@ -40,7 +54,7 @@
     }
     &img {
         height: 100%;
-        max-height: 2rem;
+        max-height: 3rem;
         width: auto;
     }
     &button {
