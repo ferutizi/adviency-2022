@@ -25,20 +25,22 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
         name: '',
         count: 1,
         addressee: '',
+        price: '',
         url: ''
     }
     
     useEffect(() => {
         if(editMode) {
             formik.setFieldValue('name', editGift.name);
-            formik.setFieldValue('addresse', editGift.addressee);
+            formik.setFieldValue('addressee', editGift.addressee);
+            formik.setFieldValue('price', editGift.price);
             formik.setFieldValue('url', editGift.url);
-        } /* else {
+        } else {
             formik.values.name = initial.name;
             formik.values.count = initial.count ;
             formik.values.addressee = initial.addressee ;
             formik.values.url = initial.url ;
-      } */
+      } 
     }, [editMode]);    
 
     const formik = useFormik({
@@ -55,6 +57,7 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
                 const g = newGifts.find(g => g.name === editGift.name);
                 g.name = formik.values.name;
                 g.addressee = formik.values.addressee;
+                g.price = formik.values.price;
                 g.url = formik.values.url;
                 setEditMode(false);
                 setEditGift({});
@@ -86,21 +89,30 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
                     <button className='modal__button' type='button' onClick={() => suggestion()}>?</button>
                 </div>
                 {formik.errors.name && formik.touched.name ? <div className='modal__error'>{formik.errors.name}</div> : <div className='modal__error'></div>}
-                <input
-                 type='text'
-                 {...formik.getFieldProps('addressee')}
-                 placeholder='Destinatario'
-                 className='gift__input'
-                 tabIndex={2} 
-                />
+                <div style={{display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '5px'}}>
+                    <input
+                    type='text'
+                    {...formik.getFieldProps('addressee')}
+                    placeholder='Destinatario'
+                    className='gift__input'
+                    tabIndex={2} 
+                    />
+                    <input
+                    type='number'
+                    {...formik.getFieldProps('price')}
+                    placeholder='Precio'
+                    className='gift__input'
+                    tabIndex={3} 
+                    />
+                </div>
                 <input
                  type='text'
                  {...formik.getFieldProps('url')}
                  placeholder='url de imagen'
                  className='gift__input' 
-                 tabIndex={3} 
+                 tabIndex={4} 
                 />
-                <button tabIndex={4} type='submit' className='gift__button'>{editMode ? 'Actualizar' : 'Agregar'}</button>
+                <button tabIndex={5} type='submit' className='gift__button'>{editMode ? 'Actualizar' : 'Agregar'}</button>
             </form>
         </Modal>
     );
