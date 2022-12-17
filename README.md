@@ -51,7 +51,7 @@ La aplicacion localmente corre en el puerto 3000
 
 - [x] Día 16: La gente está perdiendo la creatividad y necesita una ayuda, agreguemos un botón para obtener un regalo aleatorio para el campo "regalo", podés tener una lista fija de regalos, no es necesario que sean generados.
 
-- [ ] Día 17: Nos olvidamos de agregar un campo de precio para nuestros regalos! Aseguremosnos de mostrar el precio correcto tomando en cuenta la cantidad de unidades del regalo.
+- [x] Día 17: Nos olvidamos de agregar un campo de precio para nuestros regalos! Aseguremosnos de mostrar el precio correcto tomando en cuenta la cantidad de unidades del regalo.
 
 - [ ] Día 18: La gente agrega muchos regalos y necesita saber el total de lo que gastaría, pongamos el total.
 
