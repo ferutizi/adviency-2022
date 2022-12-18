@@ -1,6 +1,7 @@
+import { useEffect } from 'react';
 import './Gifts.scss';
 
-const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
+const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift, totalPrice, setTotalPrice }) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
     
     const giftApi = async () => {
@@ -16,14 +17,6 @@ const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
 /*     useEffect(() => {
       giftApi();
     }, [gifts]); */
-    
-
-    const initial = {
-        name: '',
-        count: 1,
-        addressee: '',
-        url: ''
-    }
 
     const editThisGift = (gift) => {
         setModal(true);
@@ -50,9 +43,13 @@ const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift }) => {
         setGifts(newGifts);
     }
 
+    useEffect(() => {
+        setTotalPrice(gifts.reduce((acc, e) => acc + (e.price * e.count), 0));
+    }, [gifts, setTotalPrice])
+
     return(
         <div className='gift__list items'>
-            {gifts != '' ?
+            {gifts !== '' ?
                 gifts.map(item => 
                     <div key={item.name} className='items__container'>
                         <div className='items__flex'>

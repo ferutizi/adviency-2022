@@ -9,6 +9,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editGift, setEditGift] = useState({});
+  const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <>
@@ -22,6 +23,8 @@ function App() {
             setModal={setModal}
             setEditMode={setEditMode}
             setEditGift={setEditGift}
+            totalPrice={totalPrice}
+            setTotalPrice={setTotalPrice}
           />
         </div>
         <div>
@@ -36,7 +39,10 @@ function App() {
             setEditGift={setEditGift}
           />
         </div>
-        <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>
+        <div className='gift__footer'>
+          <div className='gift__total'>Total: ${totalPrice === 0 ? null : totalPrice}</div>
+          <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>
+        </div>
       </div>
     </>
   );
