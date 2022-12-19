@@ -48,7 +48,7 @@ const Formulario = ({
             formik.setFieldValue('addressee', editGift.addressee);
             formik.setFieldValue('price', editGift.price);
             formik.setFieldValue('url', editGift.url);
-        } else if(duplicateGift) {
+        } else if(duplicateMode) {
             formik.setFieldValue('name', duplicateGift.name);
             formik.setFieldValue('addressee', duplicateGift.addressee);
             formik.setFieldValue('price', duplicateGift.price);
@@ -59,7 +59,7 @@ const Formulario = ({
             formik.values.addressee = initial.addressee ;
             formik.values.url = initial.url ;
         }
-    }, [modal]);    
+    }, [editMode, duplicateMode]);    
 
     const formik = useFormik({
         initialValues: initial,
