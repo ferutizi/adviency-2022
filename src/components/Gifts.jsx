@@ -1,7 +1,15 @@
 import { useEffect } from 'react';
 import './Gifts.scss';
 
-const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift, totalPrice, setTotalPrice }) => {
+const Gifts = ({ gifts,
+    setGifts,
+    setModal,
+    setEditMode,
+    setEditGift,
+    setTotalPrice,
+    setDuplicateGift,
+    setDuplicateMode
+}) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
     
     const giftApi = async () => {
@@ -22,6 +30,12 @@ const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift, totalPrice
         setModal(true);
         setEditMode(true);
         setEditGift(gift);
+    }
+
+    const duplicateThisGift = (gift) => {
+        setModal(true);
+        setDuplicateMode(true);
+        setDuplicateGift(gift)
     }
 
     const aumentar = (gift) => {
@@ -65,6 +79,7 @@ const Gifts = ({ gifts, setGifts, setModal, setEditMode, setEditGift, totalPrice
                                 <button type='button' onClick={() => aumentar(item)} className='items__button' tabIndex={3}>+</button>
                                 <button type='button' onClick={() => disminuir(item)} className='items__button' tabIndex={4}>-</button>
                                 <button type='button' onClick={() => editThisGift(item)} className='items__button' tabIndex={5}>ed</button>  
+                                <button type='button' onClick={() => duplicateThisGift(item)} className='items__button' tabIndex={5}>x2</button>  
                             </div>
                             <button type='button' onClick={() => deleteGift(item.name)} className='items__button--red' tabIndex={6}>x</button>
                         </div>

@@ -9,6 +9,8 @@ function App() {
   const [modal, setModal] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editGift, setEditGift] = useState({});
+  const [duplicateGift, setDuplicateGift] = useState({});
+  const [duplicateMode, setDuplicateMode] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
   return (
@@ -25,6 +27,10 @@ function App() {
             setEditGift={setEditGift}
             totalPrice={totalPrice}
             setTotalPrice={setTotalPrice}
+            duplicateGift={duplicateGift}
+            setDuplicateGift={setDuplicateGift}
+            duplicateMode={duplicateMode}
+            setDuplicateMode={setDuplicateMode}
           />
         </div>
         <div>
@@ -37,6 +43,10 @@ function App() {
             setEditMode={setEditMode}
             editGift={editGift}
             setEditGift={setEditGift}
+            duplicateGift={duplicateGift}
+            setDuplicateGift={setDuplicateGift}
+            duplicateMode={duplicateMode}
+            setDuplicateMode={setDuplicateMode}
           />
         </div>
         <div className='gift__footer'>

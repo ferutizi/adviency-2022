@@ -4,7 +4,20 @@ import Modal from './Modal';
 import { useEffect } from 'react';
 import sugg from '../suggestion.json';
 
-const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, editGift, setEditGift }) => {
+const Formulario = ({ 
+    gifts,
+    setGifts,
+    modal,
+    setModal,
+    editMode,
+    setEditMode,
+    editGift,
+    setEditGift,
+    duplicateGift,
+    setDuplicateGift,
+    duplicateMode,
+    setDuplicateMode
+}) => {
     
     const validate = (values) => {
         let error = {};
@@ -14,9 +27,9 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
             error.name = 'No escribiste ningún regalo ¿Acaso quieres un envoltorio vacío?';
         }
 
-        if(newGift && !editMode) {
+        if(newGift && !editMode && !duplicateMode) {
             error.name = 'Este regalo ya está en la lista. Puedes agregar otra unidad con el botón +';
-        }
+        } 
         
         return error;
     }
@@ -35,13 +48,18 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
             formik.setFieldValue('addressee', editGift.addressee);
             formik.setFieldValue('price', editGift.price);
             formik.setFieldValue('url', editGift.url);
+        } else if(duplicateGift) {
+            formik.setFieldValue('name', duplicateGift.name);
+            formik.setFieldValue('addressee', duplicateGift.addressee);
+            formik.setFieldValue('price', duplicateGift.price);
+            formik.setFieldValue('url', duplicateGift.url);
         } else {
             formik.values.name = initial.name;
             formik.values.count = initial.count ;
             formik.values.addressee = initial.addressee ;
             formik.values.url = initial.url ;
-      } 
-    }, [editMode]);    
+        } 
+    }, [modal]);    
 
     const formik = useFormik({
         initialValues: initial,
@@ -65,7 +83,8 @@ const Formulario = ({ gifts, setGifts, modal, setModal, editMode, setEditMode, e
             }
             resetForm({ initial });
             setModal(!modal);
-            setEditMode(false)
+            setEditMode(false);
+            setDuplicateMode(false);
         },
     })
 
