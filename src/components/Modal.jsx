@@ -1,9 +1,10 @@
 import './Modal.scss';
 
-const Modal = ({ modal, setModal, children, setEditMode }) => {
+const Modal = ({ modal, setModal, children, setEditMode, setDuplicateMode }) => {
     const closeModal = () => {
         setModal(false);
         setEditMode(false);
+        setDuplicateMode(false);
     }
     return(
         <>

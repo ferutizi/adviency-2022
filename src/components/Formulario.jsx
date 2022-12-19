@@ -58,19 +58,19 @@ const Formulario = ({
             formik.values.count = initial.count ;
             formik.values.addressee = initial.addressee ;
             formik.values.url = initial.url ;
-        } 
+        }
     }, [modal]);    
 
     const formik = useFormik({
         initialValues: initial,
         validate,
         onSubmit: (values, { resetForm }, initial) => {
-            if(!editMode) {
+            if(!editMode && !duplicateMode) {
                 setGifts([
                     ...gifts,
                     values
                 ])
-            } else {
+            } else if(editMode) {
                 const newGifts = [...gifts];
                 const g = newGifts.find(g => g.name === editGift.name);
                 g.name = formik.values.name;
@@ -80,11 +80,16 @@ const Formulario = ({
                 setEditMode(false);
                 setEditGift({});
                 setGifts(newGifts);
+            } else if(duplicateMode) {
+                setGifts([
+                    ...gifts,
+                    values
+                ])
+                setDuplicateMode(false);
+                setDuplicateGift({});
             }
             resetForm({ initial });
             setModal(!modal);
-            setEditMode(false);
-            setDuplicateMode(false);
         },
     })
 
@@ -95,7 +100,7 @@ const Formulario = ({
     }
 
     return(
-        <Modal modal={modal} setModal={setModal} setEditMode={setEditMode}>
+        <Modal modal={modal} setModal={setModal} setEditMode={setEditMode} setDuplicateMode={setDuplicateMode}>
             <form onSubmit={formik.handleSubmit} className='gift__form'>
                 <div style={{display: 'flex', gap: '5px'}}>
                     <input
