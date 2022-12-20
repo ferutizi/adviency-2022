@@ -38,7 +38,7 @@ const Formulario = ({
     
     const initial = {
         name: '',
-        count: 1,
+        quantity: 1,
         addressee: '',
         price: '',
         url: ''
@@ -57,7 +57,7 @@ const Formulario = ({
             formik.setFieldValue('url', duplicateGift.url);
         } else {
             formik.values.name = initial.name;
-            formik.values.count = initial.count ;
+            formik.values.quantity = initial.quantity ;
             formik.values.addressee = initial.addressee ;
             formik.values.url = initial.url ;
         }

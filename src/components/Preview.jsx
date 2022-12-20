@@ -7,7 +7,7 @@ const Preview = ({ preview, setPreview, gifts }) => {
             <h2 style={{margin: '0'}}>Reglalos</h2>
             <div>
             {gifts.map(item => 
-                    <p style={{textAlign: 'left'}}>{item.name} x{item.count}</p>
+                    <p style={{textAlign: 'left'}}>{item.name} x{item.quantity}</p>
             )}
             </div>
         </Modal>

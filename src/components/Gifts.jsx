@@ -39,15 +39,15 @@ const Gifts = ({ gifts,
     }
 
     const aumentar = (gift) => {
-        if(gift.count >= 0) {
-            gifts.filter(item => item.name === gift.name).map(item => item.count = gift.count + 1);
+        if(gift.quantity >= 0) {
+            gifts.filter(item => item.name === gift.name).map(item => item.quantity = gift.quantity + 1);
         }
         setGifts([...gifts]);
     }
 
     const disminuir = (gift) => {
-        if(gift.count > 1) {
-            gifts.filter(item => item.name === gift.name).map(item => item.count = gift.count - 1);
+        if(gift.quantity > 1) {
+            gifts.filter(item => item.name === gift.name).map(item => item.quantity = gift.quantity - 1);
         }
         setGifts([...gifts]);
     }
@@ -58,7 +58,7 @@ const Gifts = ({ gifts,
     }
 
     useEffect(() => {
-        setTotalPrice(gifts.reduce((acc, e) => acc + (e.price * e.count), 0));
+        setTotalPrice(gifts.reduce((acc, e) => acc + (e.price * e.quantity), 0));
     }, [gifts, setTotalPrice])
 
     return(
@@ -69,9 +69,9 @@ const Gifts = ({ gifts,
                         <div className='items__flex'>
                             <img className='items__img' src={item.url ? item.url : defaultImg} alt={item.name} />
                             <div className='items__details'>
-                                <b>{item.name} {item.count > 1 ? `x${item.count}` : null} </b>
+                                <b>{item.name} {item.quantity > 1 ? `x${item.quantity}` : null} </b>
                                 <p><span>para:</span> {item.addressee} </p>
-                                <p><span>precio:</span> ${item.price * item.count} </p>
+                                <p><span>precio:</span> ${item.price * item.quantity} </p>
                             </div>
                         </div>
                         <div className='items__button--flex'>
