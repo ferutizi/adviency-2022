@@ -1,10 +1,13 @@
 import './Modal.scss';
 
-const Modal = ({ dependency, children, setEditMode, setDuplicateMode, setDependency }) => {
+const Modal = ({ dependency, children, setEditMode, setDuplicateMode, setDependency, editMode, duplicateMode }) => {
     const closeModal = () => {
         setDependency(false);
-        setEditMode(false);
-        setDuplicateMode(false);
+        if(editMode) {
+            setEditMode(false);
+        } else if(duplicateMode) {
+            setDuplicateMode(false);
+        }
     }
     return(
         <>
