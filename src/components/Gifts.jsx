@@ -65,7 +65,7 @@ const Gifts = ({ gifts,
         <div className='gift__list items'>
             {gifts !== '' ?
                 gifts.map(item => 
-                    <div key={item.name} className='items__container'>
+                    <div key={item.id} className='items__container'>
                         <div className='items__flex'>
                             <img className='items__img' src={item.url ? item.url : defaultImg} alt={item.name} />
                             <div className='items__details'>

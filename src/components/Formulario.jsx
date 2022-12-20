@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import Modal from './Modal';
 import { useEffect } from 'react';
 import sugg from '../suggestion.json';
+import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = ({ 
     gifts,
@@ -41,7 +42,7 @@ const Formulario = ({
         quantity: 1,
         addressee: '',
         price: '',
-        url: ''
+        url: '',
     }
     
     useEffect(() => {
@@ -70,7 +71,7 @@ const Formulario = ({
             if(!editMode && !duplicateMode) {
                 setGifts([
                     ...gifts,
-                    values
+                    { id: uuidv4() }
                 ])
             } else if(editMode) {
                 const newGifts = [...gifts];
@@ -92,6 +93,7 @@ const Formulario = ({
             }
             resetForm({ initial });
             setModal(!modal);
+            console.log(gifts)
         },
     })
 

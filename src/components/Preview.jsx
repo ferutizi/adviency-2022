@@ -1,4 +1,3 @@
-import Gifts from "./Gifts";
 import Modal from "./Modal"
 
 const Preview = ({ preview, setPreview, gifts }) => {
@@ -7,7 +6,7 @@ const Preview = ({ preview, setPreview, gifts }) => {
             <h2 style={{margin: '0'}}>Reglalos</h2>
             <div>
             {gifts.map(item => 
-                    <p style={{textAlign: 'left'}}>{item.name} x{item.quantity}</p>
+                    <p key={item.id} style={{textAlign: 'left'}}>{item.name} x{item.quantity}</p>
             )}
             </div>
         </Modal>
