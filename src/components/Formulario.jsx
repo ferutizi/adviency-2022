@@ -16,7 +16,9 @@ const Formulario = ({
     duplicateGift,
     setDuplicateGift,
     duplicateMode,
-    setDuplicateMode
+    setDuplicateMode,
+    preview={preview},
+    setPreview={setPreview}
 }) => {
     
     const validate = (values) => {
@@ -100,7 +102,7 @@ const Formulario = ({
     }
 
     return(
-        <Modal modal={modal} setModal={setModal} setEditMode={setEditMode} setDuplicateMode={setDuplicateMode}>
+        <Modal dependency={modal} setDependency={setModal} setEditMode={setEditMode} setDuplicateMode={setDuplicateMode}>
             <form onSubmit={formik.handleSubmit} className='gift__form'>
                 <div style={{display: 'flex', gap: '5px'}}>
                     <input

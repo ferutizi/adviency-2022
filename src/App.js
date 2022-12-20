@@ -3,11 +3,13 @@ import { useLocalStorage } from './hooks/useLocalStorage';
 import { useState } from 'react';
 import Formulario from './components/Formulario';
 import Gifts from './components/Gifts';
+import Preview from './components/Preview';
 
 function App() {
   const [gifts, setGifts] = useLocalStorage('gifts', []);
   const [modal, setModal] = useState(false);
   const [editMode, setEditMode] = useState(false);
+  const [preview, setPreview] = useState(false);
   const [editGift, setEditGift] = useState({});
   const [duplicateGift, setDuplicateGift] = useState({});
   const [duplicateMode, setDuplicateMode] = useState(false);
@@ -47,12 +49,16 @@ function App() {
             setDuplicateGift={setDuplicateGift}
             duplicateMode={duplicateMode}
             setDuplicateMode={setDuplicateMode}
+            preview={preview}
+            setPreview={setPreview}
           />
         </div>
         <div className='gift__footer'>
           <div className='gift__total'>Total: ${totalPrice === 0 ? null : totalPrice}</div>
           <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>
         </div>
+        <button type='button' className='gift__button' onClick={() => setPreview(true)}>Preview</button>
+        <Preview preview={preview} setPreview={setPreview} gifts={gifts} />
       </div>
     </>
   );
