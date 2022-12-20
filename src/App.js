@@ -54,7 +54,7 @@ function App() {
           />
         </div>
         <div className='gift__footer'>
-          <p className='gift__total'>Total: ${totalPrice === 0 ? null : totalPrice}</p>
+          <p className='gift__total'>Total: ${totalPrice}</p>
           <div style={{display: 'flex', gap: '1em'}}>
             <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>
             <button type='button' className='gift__button' onClick={() => setPreview(true)}>Preview</button>

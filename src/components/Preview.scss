@@ -1,0 +1,8 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.preview__error {
+    color: red;
+    font-size: 1.25em;
+    text-align: center;
+}

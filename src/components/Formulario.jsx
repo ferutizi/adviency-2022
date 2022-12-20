@@ -71,7 +71,7 @@ const Formulario = ({
             if(!editMode && !duplicateMode) {
                 setGifts([
                     ...gifts,
-                    { id: uuidv4() }
+                    {...values, id: uuidv4()}
                 ])
             } else if(editMode) {
                 const newGifts = [...gifts];

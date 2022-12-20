@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import './Gifts.scss';
+import { useEffect } from 'react';
 
 const Gifts = ({ gifts,
     setGifts,
@@ -63,7 +63,7 @@ const Gifts = ({ gifts,
 
     return(
         <div className='gift__list items'>
-            {gifts !== '' ?
+            {gifts != '' ?
                 gifts.map(item => 
                     <div key={item.id} className='items__container'>
                         <div className='items__flex'>
