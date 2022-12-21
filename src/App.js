@@ -57,7 +57,7 @@ function App() {
           <p className='gift__total'>Total: ${totalPrice}</p>
           <div style={{display: 'flex', gap: '1em'}}>
             <button type='button' onClick={() => setGifts([])} className='gift__button'>Quitar todos</button>
-            <button type='button' className='gift__button' onClick={() => setPreview(true)}>Preview</button>
+            <button type='button' className='gift__button' onClick={() => setPreview(true)}>Ver lista</button>
           </div>
         </div>
         <Preview preview={preview} setPreview={setPreview} gifts={gifts} />

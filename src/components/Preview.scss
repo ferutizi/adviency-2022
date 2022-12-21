@@ -6,3 +6,10 @@
     font-size: 1.25em;
     text-align: center;
 }
+
+.print__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+} 
