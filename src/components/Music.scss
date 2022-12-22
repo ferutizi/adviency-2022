@@ -1,0 +1,16 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.muted__button {
+    @include itemButton;
+    border: 1px solid rgb(0, 0, 0, 0.7);
+    font-size: 1.5em;
+    width: fit-content;
+    position: relative;
+    top: -20.8em;
+    right: 5em;
+    &:hover {
+        border: 1px solid $primary;;
+        color: $primary;
+    }
+}

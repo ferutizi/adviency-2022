@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Formulario from './components/Formulario';
 import Gifts from './components/Gifts';
 import Preview from './components/Preview';
+import Music from './components/Music';
 
 function App() {
   const [gifts, setGifts] = useLocalStorage('gifts', []);
@@ -61,6 +62,7 @@ function App() {
           </div>
         </div>
         <Preview preview={preview} setPreview={setPreview} gifts={gifts} />
+        <Music />
       </div>
     </>
   );
