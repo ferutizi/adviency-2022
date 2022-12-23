@@ -13,7 +13,6 @@ const Music = () => {
             autoPlay={true}
             loop={true}
             muted={muted}
-            preload
             volume={0.5}
             />
         </>
