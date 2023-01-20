@@ -12,7 +12,7 @@ const Gifts = ({ gifts,
 }) => {
     const defaultImg = 'https://w7.pngwing.com/pngs/627/370/png-transparent-christmas-gift-gifts-to-send-non-stop-miscellaneous-ribbon-wedding.png';
     
-    const giftApi = async () => {
+/*     const giftApi = async () => {
         try {
             const res = await fetch('url');
             const data = await res.json();
@@ -20,7 +20,7 @@ const Gifts = ({ gifts,
         } catch (error) {
             console.log(error);
         }
-    }
+    } */
 // Llamado a Api teniendo los gifts como dependencia
 /*     useEffect(() => {
       giftApi();
@@ -32,11 +32,11 @@ const Gifts = ({ gifts,
         setEditGift(gift);
     }
 
-    const duplicateThisGift = (gift) => {
+/*     const duplicateThisGift = (gift) => {
         setModal(true);
         setDuplicateMode(true);
         setDuplicateGift(gift)
-    }
+    } */
 
     const aumentar = (gift) => {
         if(gift.quantity >= 0) {
@@ -63,7 +63,7 @@ const Gifts = ({ gifts,
 
     return(
         <div className='gift__list items'>
-            {gifts != '' ?
+            {gifts.length > 0 ?
                 gifts.map(item => 
                     <div key={item.id} className='items__container'>
                         <div className='items__flex'>
@@ -78,8 +78,8 @@ const Gifts = ({ gifts,
                             <div>
                                 <button type='button' onClick={() => aumentar(item)} className='items__button' tabIndex={3}>+</button>
                                 <button type='button' onClick={() => disminuir(item)} className='items__button' tabIndex={4}>-</button>
-                                <button type='button' onClick={() => editThisGift(item)} className='items__button' tabIndex={5}>ed</button>  
-                                <button type='button' onClick={() => duplicateThisGift(item)} className='items__button' tabIndex={6}>x2</button>  
+                                <button type='button' onClick={() => editThisGift(item)} className='items__button' tabIndex={5}>✎</button>  
+                                {/* <button type='button' onClick={() => duplicateThisGift(item)} className='items__button' tabIndex={6}>x2</button>   */}
                             </div>
                             <button type='button' onClick={() => deleteGift(item.name)} className='items__button--red' tabIndex={7}>x</button>
                         </div>
