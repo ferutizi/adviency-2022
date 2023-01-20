@@ -68,5 +68,5 @@ La aplicacion localmente corre en el puerto 3000
 # Contacto
 
 - Podes mandarme un mail a: fer.utizi@gmail.com
-- Podes ver portfolio completo [ACA](https://ferutizi.github.io/Portfolio/)
+- Podes ver mi portfolio completo [ACA](https://ferutizi.github.io/Portfolio/)
 - Podes ver mi linkedin [ACA](https://www.linkedin.com/in/fernando-utizi-2a72a3233/)
