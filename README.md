@@ -1,6 +1,6 @@
 #  Adviency 2022
 
-Adviency de Gonzalo Pozzo: App de lista de regalos.  La misma aplicación, 24 veces desde 0, con una funcionalidad nueva cada día
+Adviency de Gonzalo Pozzo: App de lista de regalos.  La misma aplicación, 23 veces desde 0, con una funcionalidad nueva cada día. Podés probar la demo [ACA](https://ferutizi.github.io/adviency-2022/)
 
 link al hilo de twitter [ACA](https://twitter.com/goncy/status/1597581725382721538)
 
@@ -11,11 +11,12 @@ Para correr el proyecto localmente:
 $ npm install
 $ npm start
 ```
-La aplicacion localmente corre en el puerto 3000
+La aplicacion localmente corre en el puerto [3000](http://localhost:3000/)
 
 ## Tecnologias usadas
 
 - React
+- SASS
 
 ## Tareas pendientes (1 por día)
 
