@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/adviency-2022/static/css/main.3c58e46d.css",
+    "main.js": "/adviency-2022/static/js/main.ed408cdc.js",
+    "static/js/787.797d4249.chunk.js": "/adviency-2022/static/js/787.797d4249.chunk.js",
+    "static/media/sleigh-bells-ringing.mp3": "/adviency-2022/static/media/sleigh-bells-ringing.863303aa3fc594ab22f6.mp3",
+    "index.html": "/adviency-2022/index.html",
+    "main.3c58e46d.css.map": "/adviency-2022/static/css/main.3c58e46d.css.map",
+    "main.ed408cdc.js.map": "/adviency-2022/static/js/main.ed408cdc.js.map",
+    "787.797d4249.chunk.js.map": "/adviency-2022/static/js/787.797d4249.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c58e46d.css",
+    "static/js/main.ed408cdc.js"
+  ]
+}
